@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
     artboardname = artboardname.replace(/['|'|/|#|.|\\|"|"]/g, "");
     var filename = NSTemporaryDirectory() + artboardname + ".png";
     doc.saveArtboardOrSlice_toFile(scaleArtboard(artboard), filename);
-    var htmlContent = NSString.stringWithString_("<html><head><meta charset='UTF-8'></head><body style='overflow-x: hidden; text-align: center; margin: 0; padding: 0; background:" + colorToRGBA(artboard.backgroundColor()) + ";'><img style='position:absolute; left:50%; margin-left:-" + artboard.frame().width() / 2 + "px;' width=" + artboard.frame().width() + " src='./" + artboardname + ".png' center top no-repeat;'></body></html>");
+    var htmlContent = NSString.stringWithString_("<html><head><meta charset='UTF-8'></head><body style='overflow-x: hidden; text-align: center; margin: 0; padding: 0; background:" + colorToRGBA(artboard.backgroundColor()) + ";'><img style='margin:0 auto' src='./" + artboardname + ".png' width='100%' /></body></html>");
     var filepath = NSTemporaryDirectory() + artboardname + ".html";
     htmlContent.dataUsingEncoding_(NSUTF8StringEncoding).writeToFile_atomically_(filepath, true);
     var file = NSURL.fileURLWithPath(filepath);
